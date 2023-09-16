@@ -29,6 +29,7 @@ crontab bypass_oracle
 
 # setup proxy api.bibica.net
 sudo site api.bibica.net -proxy=[https://i0.wp.com/bibica.net/] -dedicated-reverse-proxy=simple
+sudo site api.bibica.net -cache=custom
 
 # setup ssl
 mkdir -p /root/ssl
