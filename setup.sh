@@ -11,7 +11,7 @@ sudo apt install screen -y
 
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/webinoly/master/weby -O weby && sudo chmod +x weby && sudo ./weby -clean
 sudo rm /opt/webinoly/webinoly.conf
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/vm_standard_a1_flex.conf -O /opt/webinoly/webinoly.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Reverse-Proxy/main/reverse-proxy.conf -O /opt/webinoly/webinoly.conf
 sudo stack -nginx -build=light
 
 sudo apt remove iptables-persistent -y
@@ -28,7 +28,7 @@ echo "@reboot nohup /usr/local/bin/bypass_oracle.sh >> ./out 2>&1 <&- &" >> bypa
 crontab bypass_oracle
 
 # setup proxy api.bibica.net
-sudo site api.bibica.net -proxy=[https://i0.wp.com/bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
+sudo site api.bibica.net -proxy=[https://i0.wp.com/bibica.net/] -dedicated-reverse-proxy=simple
 
 # setup ssl
 mkdir -p /root/ssl
