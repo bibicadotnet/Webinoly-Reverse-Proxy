@@ -1,0 +1,34 @@
+# WebinolyNginxServerStart
+server {
+listen 80;
+listen [::]:80;
+server_name img.bibica.net www.img.bibica.net;
+return 301 https://$host$request_uri;
+}
+
+server {
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+ssl_certificate /root/ssl/bibica.net.pem;
+ssl_certificate_key /root/ssl/bibica.net.key;
+ssl_protocols TLSv1.2 TLSv1.3;
+
+	server_name img.bibica.net;
+	
+	access_log off;
+	error_log /var/log/nginx/img.bibica.net.error.log;
+	
+	root /var/www/img.bibica.net/htdocs;
+		
+	index index.php index.html index.htm;
+	
+	include common/auth.conf;
+	
+	# WebinolyCustom
+	include apps.d/img.bibica.net-proxy.conf;
+	# WebinolyCustomEnd
+	
+	include /var/www/img.bibica.net/*-nginx.conf;
+	include /etc/nginx/conf.d/*.conf.srv;
+}
+# WebinolyNginxServerEnd
