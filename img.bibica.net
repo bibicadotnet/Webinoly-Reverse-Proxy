@@ -13,7 +13,7 @@ ssl_certificate /root/ssl/bibica.net.pem;
 ssl_certificate_key /root/ssl/bibica.net.key;
 ssl_protocols TLSv1.2 TLSv1.3;
 
-add_header _api_bibica_net_ $upstream_cache_status;
+add_header _img_bibica_net_ $upstream_cache_status;
 
 	server_name img.bibica.net;
 	
