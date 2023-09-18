@@ -40,6 +40,7 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Reverse-Proxy/main/img.bibica.net -O /etc/nginx/sites-available/img.bibica.net
 
 # Chỉnh lại cấu hình FastCgi Cache
+mkdir -p /var/www/img_bibica_net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Reverse-Proxy/main/img.bibica.net-proxy.conf -O /etc/nginx/apps.d/img.bibica.net-proxy.conf
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Reverse-Proxy/main/fastcgi.conf -O /etc/nginx/conf.d/fastcgi.conf
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Reverse-Proxy/main/webinoly.conf -O /etc/nginx/conf.d/webinoly.conf
