@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Cập nhập OS
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y
 sudo apt install zip -y
 sudo apt install unzip -y
 sudo apt install htop -y
@@ -34,7 +34,6 @@ sudo site img.bibica.net -cache=custom
 mkdir -p /root/ssl
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.pem -O /root/ssl/bibica.net.pem
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.key -O /root/ssl/bibica.net.key
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.crt -O /root/ssl/bibica.net.crt
 
 # Setup SSL cho img.bibica.net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Reverse-Proxy/main/img.bibica.net -O /etc/nginx/sites-available/img.bibica.net
